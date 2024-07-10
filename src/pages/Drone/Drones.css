@@ -1,0 +1,294 @@
+/* Drones.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Hide horizontal overflow to prevent scrolling */
+}
+
+.drone-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 100%; /* Ensure container fills the screen width */
+    margin: 0 auto;
+    /* padding: 20px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    overflow: hidden;
+    
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 85px; /* Increased font size */
+    font-family: 'Lobster', cursive; /* Stylish font */
+    background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255,140,0,1) 50%, rgba(255,215,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition effect */
+}
+
+.title:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Scale up on hover */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    animation: shine 1s forwards;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Make sure the background is able to animate */
+.title {
+    background-size: 200%;
+}
+
+
+.drone-section {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 40px; */
+    background-color: #ffffff; /* Example background color */
+    padding: 20px; 
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+}
+
+.contentWithImage {
+    flex: 3;
+    /* Remove padding to reduce space */
+}
+
+.imageRight {
+    flex: 1;
+    margin-left: 40px; /* Adjust left margin as needed */
+    position: relative;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: flex-start; /* Align image to the top */
+}
+
+.imageRight img {
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    max-height: 80vh; /* Maximum height for consistency */
+    object-fit: cover;
+    border-radius: 50%; /* Make the image circular */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition effect */
+    position: relative; /* Ensure positioning for pseudo-element */
+    z-index: 1; /* Ensure it is above the pseudo-element */
+}
+
+.imageRight img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); /* Add glowing shadow effect */
+    animation: rotate360 1s forwards; /* Rotate animation */
+}
+
+/* Pseudo-element for background shine effect */
+.imageRight img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+    border-radius: 50%; /* Match the image's border radius */
+    z-index: -1; /* Ensure it's behind the image */
+    transition: opacity 0.5s ease, background-position 1s ease; /* Smooth transition effect */
+    opacity: 0; /* Initially hidden */
+}
+
+.imageRight img:hover::before {
+    opacity: 1; /* Show on hover */
+    animation: shine 1s forwards;
+}
+
+/* Keyframes for shine effect */
+@keyframes shine {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Keyframes for 360-degree rotation */
+@keyframes rotate360 {
+    0% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(360deg);
+    }
+}
+
+
+.sectionTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4a90e2; /* Example color */
+    background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255,140,0,1) 50%, rgba(255,215,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: text-shadow 0.5s ease, background-position 1s ease; /* Smooth transition effect */
+    background-size: 200%; /* Ensures enough space for the gradient to move */
+}
+
+.sectionTitle:hover {
+    animation: shineTitle 1s forwards; /* Apply shine animation */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); /* Enhance text-shadow on hover */
+}
+
+/* Keyframes for shine effect */
+@keyframes shineTitle {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+
+.section1{
+    background: linear-gradient(90deg, rgba(210, 169, 0, 0.8), rgba(180, 140, 0, 0.5)); /* Transparent gradient background */
+}
+.section2{
+    background: linear-gradient(90deg, rgba(25, 69, 0, 0.8), rgba(255, 14, 0, 0.5)); /* Transparent gradient background */
+}
+.section3{
+    background: linear-gradient(90deg, rgba(25, 69, 200, 0.8), rgba(255, 140, 0, 0.5)); /* Transparent gradient background */
+}
+.section4{
+    background: linear-gradient(90deg, rgba(25, 69, 20, 0.8), rgba(2, 14, 25, 0.5)); /* Transparent gradient background */
+}
+.section5{
+    background: linear-gradient(90deg, rgba(20, 0, 10, 0.8), rgba(255, 140, 120, 0.5)); /* Transparent gradient background */
+}
+
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.drone-card {
+    flex: 1;
+    background-color: #4a90e2; /* Blue background color */
+    background-image: linear-gradient(90deg, rgba(, 40, 100, 0.8), rgba(2, 14, 12, 0.5));
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+.cardContent strong {
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(255,69,0,1) 0%, rgba(255,140,0,1) 50%, rgba(255,215,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .title {
+        font-size: 48px; /* Decrease font size for smaller screens */
+    }
+
+    .imageContainer {
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+
+    .drone-section {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 40px; */
+    background-color: #ffffff; /* Example background color */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+}
+
+    .imageRight {
+        margin-bottom: 10px; /* Reduce space between image and text on smaller screens */
+       
+    }
+
+    .imageRight img {
+        max-height: 50vh; /* Adjust maximum height for consistency on smaller screens */
+    }
+
+    .sectionTitle {
+        font-size: 24px; /* Decrease font size for section titles on smaller screens */
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px; /* Space between stacked cards */
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column; /* Stack rows vertically */
+        gap: 20px; /* Space between stacked rows */
+    }
+
+    .card {
+        flex: 1; /* Ensure cards take full width */
+        padding: 20px; /* Adjust padding for cards */
+    }
+
+    .cardContent {
+        font-size: 14px; /* Decrease font size for card content on smaller screens */
+    }
+}

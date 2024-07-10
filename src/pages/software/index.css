@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/index.css or src/App.css */
+.service-card {
+    background: linear-gradient(to right, #423b24, #c8e6c9);
+  }
+  
+  .service-card:nth-child(2n) {
+    background: linear-gradient(to right, #c222a7, #75240c);
+  }
+  
+  .service-card:nth-child(2n+1) {
+    background: linear-gradient(to right, #8f0e55, #b3e5fc);
+  }
+  
+  .service-card:hover {
+    background: linear-gradient(to right, #b4bd61, #5e2a59);
+  }
+  
